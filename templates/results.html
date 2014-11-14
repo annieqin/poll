@@ -1,0 +1,9 @@
+<h1>{{ poll.question }}</h1>
+
+<ul>
+{% for choice in choices %}
+    <li>{{ choice.choice }} -- {{ choice.votes }} vote</li>
+{% end %}
+</ul>
+
+<a href="/poll/{{poll.id}}">Vote again?</a>

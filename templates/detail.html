@@ -1,0 +1,13 @@
+<h1>{{ poll.question }}</h1>
+
+<form action="/poll/{{poll.id}}/votes" method="post">
+{% for choice in choices %}
+    <input type="radio" name="vote" id="choice" value="{{ choice.id }}" />
+    <label for="choice">{{ choice.choice }} - {{ choice.votes }}</label><br />
+{% end %}
+<input type="submit" value="Vote" />
+</form>
+<form action="/poll/{{poll.id}}/addschoice" method="post">
+<input type="text" name="choice" placeholder="choice"/>
+        <input type="submit" name="addschoice" value="Adds choice" />
+</form>
